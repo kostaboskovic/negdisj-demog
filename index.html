@@ -24,6 +24,7 @@
   <script src="scripts/plugins/customs/video-button-response-prompt-position.js"></script>
   <script src="expt_script/instructions_demog.js"></script>
   <script src="expt_script/countries_languages.js"></script>
+  <script src="scripts/plugins/plugin-survey-html-form.js"></script>
   <link href="css/jspsych.css" type="text/css" rel="stylesheet"></link>
   <link href="css/experiment.css" rel="stylesheet" type="text/css">
   </link>
@@ -222,27 +223,26 @@
       }
     }
 
-    var demog_age_gender = {
-      type: SurveyDropdown,
+    var demog_dob_gender = {
+      type: jsPsychSurveyHtmlForm,
       preamble: demog_require_answer,
-      questions: [
-        {
-          prompt: demog_age_instr,
-          name: 'demog_age',
-          options: demog_age_opts,
-          required: true,
-        },
-        {
-          prompt: demog_gender_instr,
-          name: 'demog_gender',
-          options: demog_gender_opts,
-          required: true,
-        },
-      ],
-      data: {
-        demog_question: 'demog_age_gender',
-      }
-    }
+      html: `
+        <p>` + demog_dob_instr + `<font color="brown">*</font><br>
+          <input type="text" name="demog_dob" placeholder="MM/DD/YYYY" size="12"
+             pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}"
+             title="Please enter the date as MM/DD/YYYY, e.g. 03/07/2021" required>
+        </p>
+        <p>` + demog_gender_instr + `<font color="brown">*</font><br>
+          <select name="demog_gender" required>
+            <option value="" disabled selected>Select...</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Non-binary</option>
+            <option>Decline to answer</option>
+          </select>
+        </p>`,
+      data: { demog_question: 'demog_dob_gender' }
+    };
 
     var demog_ethnic = {
       type: jsPsychSurveyMultiSelect,
@@ -326,7 +326,7 @@
       //demog_country_current,
       demog_language_first,
       demog_language_others_loop,
-      demog_age_gender, 
+      demog_dob_gender, 
       demog_ethnic, 
       //demog_objses,
       //demog_meta,
