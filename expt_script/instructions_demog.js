@@ -8,7 +8,7 @@ first_page_instruction =
         <p>This experiment is being conducted by researchers at UC San Diego Language
         and Development Lab. Before you decide to participate, please read the following information carefully:</p>
         <br>
-        <p>In this study, a character hide candy and give clues as to where they hid the candy.<p>
+        <p>In this study, a character will hide candy and give clues about where they hid the candy.<p>
         
         This study is part of a larger project that explores children's 
      developing comprehension of logical language (e.g., "and", "or", "not", etc.).</p>
@@ -23,7 +23,7 @@ consent_form = [`
                   padding-right:10%">
       <p><b><u>Please click 'Next' if you consent to your child's participation in this experiment:</u></b></p>
       <p>This study is part of a larger project that is exploring children's 
-      cognitive development..</p>
+      cognitive development.</p>
       <p>By answering the questions in this study, you consent for your child to participate
         in research conducted by Professor David Barner at the University of 
         California, San Diego. If you have any questions about the study, you 
