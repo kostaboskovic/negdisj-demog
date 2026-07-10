@@ -6,7 +6,7 @@ first_page_instruction =
                   padding-left:10%;
                   padding-right:10%">
         <p>This experiment is being conducted by researchers at UC San Diego Language
-        and Development Lab. Before you decide to participate, please read the following information carefully:</p>
+        and Development Lab. Before you decide to participate, please read the following information carefully: </p>
         <br>
         <p>In this study, a character will hide candy and give clues about where they hid the candy.<p>
         
