@@ -54,7 +54,7 @@
           body: JSON.stringify({
             experimentID: "TXrF4Rjr7Ib5",
             filename: `${subject_id}.json`,
-            data: JSON.stringify(jsPsych.data.get()),
+            data: jsPsych.data.get().json(),
           }),
         })
         .then(response => {
