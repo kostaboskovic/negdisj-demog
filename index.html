@@ -61,9 +61,9 @@
           // Check if the request was successful
           if (response.ok) {
             // Show the thank you popup
-            alert("Thank you for completing the study! Please DON'T close this message and inform the researcher.");
+            alert("Thank you! Your responses have been submitted. You may now close this window. We look forward to seeing you at your session!");
           } else {
-            alert("Failed to submit data. Please inform the researcher.");
+            alert("Something went wrong submitting your responses. Please email us at kboskovic@ucsd.edu and we'll help.");
           }
         })
         .catch(error => {
@@ -103,7 +103,7 @@
       pages: [
         first_page_instruction,
         consent_form,
-        "Thank you! Please inform the researcher that you have completed this section."],
+        "Thank you! Click Next to continue to a few short questions."],
       show_clickable_nav: true,
       allow_backward: true,
       on_start: function () {
