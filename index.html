@@ -75,29 +75,27 @@
     /* create timeline */
     var timeline = [];
 
-    var subject_id = "";
+    var subject_id = jsPsych.data.getURLVariable('pid') || "";
     var filename = "";
 
     var pid_enter = {
       type: jsPsychSurveyText,
-      questions: [
-        {
-          prompt: "Researcher: Enter PID:",
-          name: "pid",
-          rows: 1, 
-          required: true
-        }
-      ],
+      questions: [{
+        prompt: "Please enter the participant ID from your email:",
+        name: "pid", rows: 1, required: true
+      }],
       on_finish: function(data) {
-        subject_id = data.response["pid"]
-        jsPsych.data.addProperties({subject_id: data.response["pid"]})
-        //filename = `${subject_id}.csv`;
-
-        console.log(subject_id)
+        subject_id = data.response["pid"];
+        jsPsych.data.addProperties({subject_id: subject_id});
       }
-    }
+    };
 
-    timeline.push(pid_enter);
+
+    if (subject_id === "") {
+      timeline.push(pid_enter);
+    } else {
+      jsPsych.data.addProperties({subject_id: subject_id});
+    }
 
     /** CONSENT FORM AND INSTRUCTIONS **/
    var instructions = {
